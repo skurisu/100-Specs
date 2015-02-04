@@ -1005,7 +1005,7 @@ function Shape(sides){
  * Door class
  * @param {boolean} isOpen Whether the door is opened or closed
  */
-function Class(isOpen) {
+function Door(isOpen) {
   this.isOpen = isOpen;
 }
 
@@ -1016,7 +1016,10 @@ function Class(isOpen) {
  * @param {number} size  The shoe size
  * @param {string} color The shoe color
  */
-
+function Shoe (size,color){
+  this.size = size;
+  this.color = color;
+}
 
 /**
  * Step 56
