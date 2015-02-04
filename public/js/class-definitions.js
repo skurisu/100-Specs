@@ -11,7 +11,7 @@ var unicorn = "";
  * then assign it to be the value of "Atari"
  *
  */
-
+var videogame_system = "Atari";
 
 /* Step 3
  *
