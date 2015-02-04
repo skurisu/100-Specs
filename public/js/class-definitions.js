@@ -1135,7 +1135,18 @@ var dinner = new Meal(["fish","vegetables"]);
  *       Any other species => "Could not determine if warm-blooded"
  *
  */
-
+Animal.prototype.isWarmBlooded = function (species) {
+  if(this.species === "Fish"){
+    return false;
+  }
+  if(this.species === "Monkey"){
+    return true;
+  }
+  if(this.species === "Bird"){
+    return true;
+  }
+  return "Could not determine if warm-blooded";
+};
 
 /* Step 82
  *
