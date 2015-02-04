@@ -1016,7 +1016,7 @@ function Door(isOpen) {
  * @param {number} size  The shoe size
  * @param {string} color The shoe color
  */
-function Shoe (size,color){
+function Shoe (size,color) {
   this.size = size;
   this.color = color;
 }
@@ -1027,7 +1027,9 @@ function Shoe (size,color){
  * House class
  * @param {number} stories How many stories tall the house is
  */
-
+function House(stories) {
+  this.stories = stories;
+}
 
 /**
  * Step 57
