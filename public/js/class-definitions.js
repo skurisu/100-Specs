@@ -957,7 +957,7 @@ SolarSystem.prototype.removePlanet = function (planet) {
  * @param {string} species The animal species
  * @param {string} gender  male or female
  */
-function Animal(species,gender){
+function Animal (species,gender) {
   this.species = species;
   this.gender = gender;
 }
@@ -969,7 +969,7 @@ function Animal(species,gender){
  * @param {string} make The vehicle's make
  * @param {string} model The vehicle's model
  */
-function Vehicle(make,model){
+function Vehicle (make,model) {
   this.make = make;
   this.model = model;
 }
@@ -980,7 +980,7 @@ function Vehicle(make,model){
  * Shape class
  * @param {number} sides The number of sides, should be greater than 3
  */
-function Shape(sides){
+function Shape (sides) {
   if(sides > 3) {
     this.sides = sides;
   }
@@ -993,7 +993,7 @@ function Shape(sides){
  * @param {anything} contents The contents of the box
  * @param {boolean} isOpen     Whether the box is opened or closed
  */
- function Box(contents,isOpen) {
+ function Box (contents,isOpen) {
   this.contents = contents;
   this.isOpen = isOpen;
  }
@@ -1005,7 +1005,7 @@ function Shape(sides){
  * Door class
  * @param {boolean} isOpen Whether the door is opened or closed
  */
-function Door(isOpen) {
+function Door (isOpen) {
   this.isOpen = isOpen;
 }
 
@@ -1027,7 +1027,7 @@ function Shoe (size,color) {
  * House class
  * @param {number} stories How many stories tall the house is
  */
-function House(stories) {
+function House (stories) {
   this.stories = stories;
 }
 
@@ -1037,7 +1037,9 @@ function House(stories) {
  * Lightbulb class
  * @param {boolean} isOn Whether the light is on or off
  */
-
+function Lightbulb (isOn) {
+  this.isOn = isOn;
+}
 
 /**
  * Step 58
