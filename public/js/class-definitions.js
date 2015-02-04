@@ -1047,7 +1047,9 @@ function Lightbulb (isOn) {
  * Cookie class
  * @param {string} flavor The cookie's flavor
  */
-
+function Cookie (flavor) {
+  this.flavor = flavor;
+}
 
 /**
  * Step 59
