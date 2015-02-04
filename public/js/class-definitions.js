@@ -317,7 +317,14 @@ function sahara_river ( ) {
  * @return {Bool}
  *
  */
-
+function installLinux (type) {
+  for(var i = 0; i < linuxFlavors.length; i++) {
+    if(linuxFlavors[i] === type){
+      return true;
+    }
+  }
+  return false;
+}
 
 /* Step 23
  *
