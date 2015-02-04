@@ -410,7 +410,15 @@ function listLivingOrgClass () {
  * @return {String}
  *
  */
-
+function favoritePlanet(currentPlanet) {
+  var randomPlanet = planets[Math.floor(Math.random() * planets.length)];
+  for(var i = 0; i < planets.length; i++){
+    if(planets[i] === currentPlanet) {
+      return "I'm from " + currentPlanet + ", but I wish I could go to " + randomPlanet + ".";
+    }
+  }
+  return currentPlanet + " is not a planet!";
+}
 
 /* Step 27
  *
