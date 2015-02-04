@@ -211,10 +211,10 @@ var DNA = ["nucleatides","guanine","adenine","thymine","cytosine"];
  *
  */
 var laptopCosts = {
-  "MacBook" : 1500,
-  "Alienware" : 2500,
-  "HP" : 499,
-  "Surface" : 320
+  MacBook : 1500,
+  Alienware : 2500,
+  HP : 499,
+  Surface : 320
 };
 
 /* Step 17
@@ -442,7 +442,23 @@ function favoritePlanet(currentPlanet) {
  *   earnMoney
  *
  */
+function Person (name,money,age,gender){
+  this.name = name;
+  this.money = money;
+  this.age = age;
+  this.gender = gender;
 
+}
+
+
+Person.prototype.spendMoney = function (someMoney) {
+  this.money = this.money - someMoney;
+
+};
+
+Person.prototype.earnMoney = function (someMoney) {
+  this.money = this.money + someMoney;
+};
 
 /* Step 28
  *
@@ -455,7 +471,12 @@ function favoritePlanet(currentPlanet) {
  * @return {Number}
  *
  */
-
+function purchaseLaptop (laptop) {
+  if(laptopCosts.hasOwnProperty(laptop)){
+    return laptopCosts[laptop].toString();
+  }
+  return -1;
+}
 
 /* Step 29
  *
