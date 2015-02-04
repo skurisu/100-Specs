@@ -281,7 +281,13 @@ var beers = {
  * @return {String}
  *
  */
+ // var sahara_river = function () {
+ //  return "Nile River";
+ // };
 
+function sahara_river ( ) {
+  return "Nile River";
+}
 
 /* Step 21
  *
