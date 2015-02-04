@@ -489,7 +489,12 @@ function purchaseLaptop (laptop) {
  * @return {Bool}
  *
  */
-
+function canTalkAbout (club) {
+  if(club === club_name) {
+    return false;
+  }
+  return true;
+}
 
 /* Step 30
  *
@@ -513,7 +518,13 @@ function purchaseLaptop (laptop) {
  *   write
  *
  */
+function Pen (color) {
+  this.color = color;
+}
 
+Pen.prototype.write = function (message) {
+  return this.color + ": " + message;
+};
 
 /* Step 31
  *
