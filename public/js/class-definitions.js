@@ -128,7 +128,14 @@ var domains = {
  *   Konqueror  => "konqueror.org"
  *
  */
-
+var browsers = {
+  "Chromium" : "google.com",
+  "Safari" : "apple.com",
+  "Opera" : "opera.com",
+  "Firefox" : "mozilla.org",
+  "Sleipnir" : "fenrir-inc.com",
+  "Konqueror" : "konqueror.org"
+};
 
 /* Step 13
  *
