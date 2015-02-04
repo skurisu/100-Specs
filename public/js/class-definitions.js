@@ -1106,12 +1106,12 @@ var incandescent = new Lightbulb(true);
 var halogen = new Lightbulb(false);
 
 // Create 2 cookies of different flavors
-var chocolateChip;
-var gingerbread;
+var chocolateChip = new Cookie("chocolate");
+var gingerbread = new Cookie("gingerbread");
 
 // Create 2 different meals
-var breakfast;
-var dinner;
+var breakfast = new Meal(["cereal","milk"]);
+var dinner = new Meal(["fish","vegetables"]);
 
 
  /* Steps 81 to 90
