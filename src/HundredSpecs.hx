@@ -101,6 +101,7 @@ class HundredSpecs
   {
     M.it("should declare a variable named 'unicorn' with no value set.", function() {
       E.expect(untyped(unicorn)).to.not.be.a('undefined');
+      E.expect(untyped(unicorn)).to.equal(null);
     });
   }
 
@@ -625,7 +626,9 @@ class HundredSpecs
     });
     M.it("should be able to grow more plants", function (){
       var myGarden = untyped __js__("new Garden(10)");
+      E.expect( untyped(myGarden.grow()) ).to.equal(false);
       E.expect( untyped(myGarden.plantsTotal) ).to.equal(10);
+      untyped(myGarden.water());
       untyped(myGarden.grow());
       E.expect( untyped(myGarden.plantsTotal) ).to.equal(11);
     });
@@ -1177,7 +1180,8 @@ class HundredSpecs
   private inline function step81():Void
   {
     M.it("isWarmBlooded should be a function.", function() {
-      E.expect(untyped __js__("Animal")).to.not.be.a('function');
+      var myAnimal = untyped __js__("new Animal('Monkey', 'male')");
+      E.expect(untyped(myAnimal.isWarmBlooded)).to.be.a('function');
     });
     M.it("'Monkey' and 'Bird' should return true.", function() {
       E.expect(untyped __js__("new Animal('Monkey', 'male')").isWarmBlooded()).to.equal(true);
@@ -1195,7 +1199,8 @@ class HundredSpecs
   private inline function step82():Void
   {
     M.it("drive should be a function.", function() {
-      E.expect(untyped __js__("Vehicle")).to.be.a("function");
+      var myVehicle = untyped __js__("new Vehicle('Toyota', 'FJ Cruiser')");
+      E.expect( untyped(Vehicle.drive) ).to.be.a("function");
     });
     M.it("should return 'Driving on {streetName}' if param is a string and not empty", function() {
       var cruiser = untyped __js__("new Vehicle('Toyota', 'FJ Cruiser')");
@@ -1211,7 +1216,8 @@ class HundredSpecs
   private inline function step83():Void
   {
     M.it("getType should be a function.", function() {
-      E.expect(untyped __js__("Shape")).to.be.a("function");
+      var myShape = untyped __js__("new Shape('hexagon')");
+      E.expect( untyped(myShape.getType) ).to.be.a("function");
     });
     M.it("should return the correct types for sides 3 to 10.", function() {
       E.expect(untyped __js__("new Shape(3)").getType()).to.equal("triangle");
@@ -1231,7 +1237,8 @@ class HundredSpecs
   private inline function step84():Void
   {
     M.it("openBox should be a function.", function() {
-      E.expect(untyped __js__("Box")).to.be.a("function");
+      var myBox = untyped __js__("new Box('Monkey', false)");
+      E.expect( untyped(myBox.openBox) ).to.be.a("function");
     });
     M.it("should open the box if it is closed.", function() {
       var garfieldBox = untyped __js__("new Box(new Animal('Cat', 'male'), false)");
@@ -1239,7 +1246,7 @@ class HundredSpecs
       E.expect(untyped(garfieldBox.isOpen)).to.equal(true);
     });
     M.it("should not close the box if it is open.", function() {
-      var garfieldBox = untyped __js__("new Box(new Animal('Cat', 'male'), false)");
+      var garfieldBox = untyped __js__("new Box(new Animal('Cat', 'male'), true)");
       E.expect(garfieldBox.openBox()).to.equal(false);
       E.expect(untyped(garfieldBox.isOpen)).to.equal(true);
     });
@@ -1248,7 +1255,8 @@ class HundredSpecs
   private inline function step85():Void
   {
     M.it("openClose should be a function.", function() {
-      E.expect(untyped __js__("Door")).to.be.a("function");
+      var myDoor = untyped __js__("new Door(true)");
+      E.expect( untyped(myDoor.openClose) ).to.be.a("function");
     });
     M.it("should open the door if it is closed.", function() {
       var door = untyped __js__("new Door(false)");
@@ -1256,7 +1264,7 @@ class HundredSpecs
       E.expect(untyped(door.isOpen)).to.equal(true);
     });
     M.it("should close the door if it is open.", function() {
-      var door = untyped __js__("new Door(false)");
+      var door = untyped __js__("new Door(true)");
       E.expect(door.openClose()).to.equal(false);
       E.expect(untyped(door.isOpen)).to.equal(false);
     });
@@ -1265,7 +1273,8 @@ class HundredSpecs
   private inline function step86():Void
   {
     M.it("findShoes should be a function.", function() {
-      E.expect(untyped __js__("Shoe")).to.be.a("function");
+      var myShoe = untyped __js__("new Shoe(7, 'silver')");
+      E.expect( untyped(myShoe.findShoes) ).to.be.a("function");
     });
     M.it("should return 'Found {color} shoes of size {size}'.", function() {
       var shoes = untyped __js__("new Shoe(7, 'silver')");
@@ -1276,7 +1285,8 @@ class HundredSpecs
   private inline function step87():Void
   {
     M.it("isATallStory should be a function.", function() {
-      E.expect(untyped __js__("House")).to.be.a("function");
+      var myHouse = untyped __js__("new House(2)");
+      E.expect( untyped(myHouse.isATallStory) ).to.be.a("function");
     });
     M.it("should return true if stories is greater than or equal to storiesTooTall.", function() {
       var house = untyped __js__("new House(3)");
@@ -1292,7 +1302,8 @@ class HundredSpecs
   private inline function step88():Void
   {
     M.it("flipSwitch should be a function.", function() {
-      E.expect(untyped __js__("Lightbulb")).to.be.a("function");
+      var myLightbulb = untyped __js__("new Lightbulb(false)");
+      E.expect( untyped(myLightBulb.flipSwitch) ).to.be.a("function");
     });
     M.it("should flip the switch on if 'on' is passed in as a param.", function() {
       var light = untyped __js__("new Lightbulb(false)");
@@ -1309,7 +1320,8 @@ class HundredSpecs
   private inline function step89():Void
   {
     M.it("swipedByCookieMonster should be a function.", function() {
-      E.expect(untyped __js__("Cookie")).to.be.a("function");
+      var myCookie = untyped __js__("new Cookie('Chocolate')");
+      E.expect( untyped(myCookie.swipedByCookieMonster) ).to.be.a("function");
     });
     M.it("should return true if the flavor is 'chocolate' and the day of the week is 'Monday'.", function() {
       var chocoCookie = untyped __js__("new Cookie('chocolate')");
