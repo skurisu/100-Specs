@@ -751,16 +751,21 @@ SolarSystem.prototype.removePlanet = function (planet) {
 
  Scientist.prototype.addDiscovery = function (discovery) {
   this.discoveries.push(discovery);
-  for(var i = 0; i < this.discoveries.length; i++) {
-    if(this.discoveries.length === 1)
+
+  if(this.discoveries.length === 1) {
     return "I discovered " + this.discoveries[0] + ".";
-    }
-    if(this.discoveries.length === 2) {
-      return "I discovered " + this.discoveries[0] + " and " + this.discoveries[1] + ".";
-    }
-    if(this.discoveries.length === 3) {
-      return "I discovered " + this.discoveries[0] + ", " + this.discoveries[1] + ", and " + this.discoveries[2] + ".";
-    }
+  }
+  if(this.discoveries.length === 2) {
+    return "I discovered " + this.discoveries[0] + " and " + this.discoveries[1] + ".";
+  }
+  if(this.discoveries.length === 3) {
+    return "I discovered " + this.discoveries[0] + ", " + this.discoveries[1] + ", and " + this.discoveries[2] + ".";
+  }
+  // var discStr = "";
+
+  // for(var i = 0; i < this.discoveries.length; i++) {
+  //   discStr += this.discoveries[i];
+  // }
  };
 
 
@@ -1068,12 +1073,12 @@ function Meal (foods) {
 
 
 // Create 2 different species of animals
-var george;
-var nemo;
+var george = new Animal("Monkey","male");
+var nemo = new Animal("Fish","male");
 
 // Create 2 different vehicles
-var civic;
-var forte;
+var civic = new Vehicle("Honda","Civic");
+var forte = new Vehicle("KIA","Forte");
 
 // Create 2 shapes with different numbers of sides
 var square;
