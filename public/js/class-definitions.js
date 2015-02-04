@@ -980,7 +980,11 @@ function Vehicle(make,model){
  * Shape class
  * @param {number} sides The number of sides, should be greater than 3
  */
-
+function Shape(sides){
+  if(sides > 3) {
+    this.sides = sides;
+  }
+}
 
 /**
  * Step 53
@@ -989,6 +993,10 @@ function Vehicle(make,model){
  * @param {anything} contents The contents of the box
  * @param {boolean} isOpen     Whether the box is opened or closed
  */
+ function Box(contents,isOpen) {
+  this.contents = contents;
+  this.isOpen = isOpen;
+ }
 
 
 /**
@@ -997,7 +1005,9 @@ function Vehicle(make,model){
  * Door class
  * @param {boolean} isOpen Whether the door is opened or closed
  */
-
+function Class(isOpen) {
+  this.isOpen = isOpen;
+}
 
 /**
  * Step 55
