@@ -367,7 +367,12 @@ function installLinux (type) {
  * @return {String}
  *
  */
-
+function browseURL (checkBrowser) {
+  if(browsers.hasOwnProperty(checkBrowser)){
+    return browsers[checkBrowser];
+  }
+  return false;
+}
 
 /* Step 25
  *
@@ -378,7 +383,13 @@ function installLinux (type) {
  * @return {String}
  *
  */
-
+function listLivingOrgClass () {
+  var orgItems = "";
+  for(var i = 0; i < livingOrganismClassification.length; i++){
+    orgItems += "<li>" + livingOrganismClassification[i] + "</li>";
+  }
+  return "<ul>" + orgItems + "</ul>";
+}
 
 /* Step 26
  *
