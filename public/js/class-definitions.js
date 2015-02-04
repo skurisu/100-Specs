@@ -724,6 +724,44 @@ SolarSystem.prototype.removePlanet = function (planet) {
  *   addDiscovery
  *   
  */
+ function Scientist(name,money,age,gender){
+  Person.call(this,name,money,age,gender);
+  this.disciplines = [];
+  this.discoveries = [];
+ }
+
+ Scientist.prototype = Object.create(Person.prototype, {
+  constructor: {
+    value: Person
+  }
+ });
+
+ Scientist.prototype.addDiscipline = function (discipline) {
+  this.disciplines.push(discipline);
+ };
+
+ Scientist.prototype.checkDiscipline = function (discipline) {
+   for(var i = 0; i < this.disciplines.length; i++) {
+    if(this.disciplines[i] === discipline){
+      return true;
+    }
+   }
+   return false;
+ };
+
+ Scientist.prototype.addDiscovery = function (discovery) {
+  this.discoveries.push(discovery);
+  for(var i = 0; i < this.discoveries.length; i++) {
+    if(this.discoveries.length === 1)
+    return "I discovered " + this.discoveries[0] + ".";
+    }
+    if(this.discoveries.length === 2) {
+      return "I discovered " + this.discoveries[0] + " and " + this.discoveries[1] + ".";
+    }
+    if(this.discoveries.length === 3) {
+      return "I discovered " + this.discoveries[0] + ", " + this.discoveries[1] + ", and " + this.discoveries[2] + ".";
+    }
+ };
 
 
 /* Step 36
@@ -928,7 +966,10 @@ SolarSystem.prototype.removePlanet = function (planet) {
  * @param {string} make The vehicle's make
  * @param {string} model The vehicle's model
  */
-
+function Vehicle(make,model){
+  this.make = make;
+  this.model = model;
+}
 
 /**
  * Step 52
