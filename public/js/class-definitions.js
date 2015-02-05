@@ -1161,8 +1161,8 @@ Animal.prototype.isWarmBlooded = function (species) {
  *
  */
 Vehicle.prototype.drive = function (streetName) {
-  if(typeof streetName === 'string' && streetName !== undefined){
-    return "Driving on" + streetName;
+  if(typeof streetName === 'string' && streetName){
+    return "Driving on " + streetName;
   }
   return "Driving forward";
 };
@@ -1291,6 +1291,13 @@ Shoe.prototype.findShoes = function () {
  * Return true if isOn is true, false otherwise.
  *
  */
+ Lightbulb.prototype.flipSwitch = function (on) {
+   if(on === "on"){
+    this.isOn = true;
+    return true;
+   }
+   return false;
+ };
 
 
  /* Step 89
@@ -1300,6 +1307,12 @@ Shoe.prototype.findShoes = function () {
  * and the dayOfTheWeek is "Monday", return true.  Else return false.
  *
  */
+ Cookie.prototype.swipedByCookieMonster = function (dayOfTheWeek) {
+   if(this.flavor === "chocolate" && dayOfTheWeek === "Monday"){
+    return true;
+   }
+   return false;
+ };
 
 
  /* Step 90
