@@ -1433,8 +1433,8 @@ var porchLightsOff = new Lightbulb(false).flipSwitch();
  * and assign the values to each variable below.
  *
  */
-var cookieMonsterPwns;
-var cookieMonsterBlocked;
+var cookieMonsterPwns = new Cookie("chocolate").swipedByCookieMonster("Monday");
+var cookieMonsterBlocked = new Cookie("oatmeal").swipedByCookieMonster("Tuesday");
 
 
  /* Step 100
@@ -1443,5 +1443,5 @@ var cookieMonsterBlocked;
  * and assign the values to each variable below.
  *
  */
-var badForYou;
-var goodForYou;
+var badForYou = new Meal(["soda","oreos","cake"]).containsJunkFood();
+var goodForYou = new Meal("bacon","cheese","pigs").containsJunkFood();
