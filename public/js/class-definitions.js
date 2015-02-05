@@ -3,7 +3,7 @@
  * Declare a variable named "unicorn"
  *
  */
-var unicorn = "";
+var unicorn = null;
 
 /* Step 2
  *
@@ -560,11 +560,13 @@ Garden.prototype.water = function () {
 };
 
 Garden.prototype.grow = function () {
-  this.water(); //hack will be fixed in future version
   if(this.isWatered === true){
-    this.plantsTotal = this.plantsTotal + 1;
     this.isWatered = false;
+    this.plantsTotal = this.plantsTotal + 1;
+    return this.plantsTotal;
   }
+
+  return false;
 };
 
 /* Step 32
@@ -989,7 +991,7 @@ function Vehicle (make,model) {
  * @param {number} sides The number of sides, should be greater than 3
  */
 function Shape (sides) {
-  if(sides > 3) {
+  if(sides >= 3) {
     this.sides = sides;
   }
 }
@@ -1158,7 +1160,12 @@ Animal.prototype.isWarmBlooded = function (species) {
  * return "Driving on {streetName}", else return "Driving forward".
  *
  */
-
+Vehicle.prototype.drive = function (streetName) {
+  if(typeof streetName === 'string' && streetName !== undefined){
+    return "Driving on" + streetName;
+  }
+  return "Driving forward";
+};
 
  /* Step 83
  *
@@ -1177,7 +1184,40 @@ Animal.prototype.isWarmBlooded = function (species) {
  * Any other number => "Could not determine type"
  *
  */
+// Shape.prototype.getType = function () {
+//   var sidesObj = {
+//     3 : "triangle",
+//     4 : "quadrilateral",
+//     5 : "pentagon",
+//     6 : "hexagon",
+//     7 : "heptagon",
+//     8 : "octagon",
+//     9 : "nonagon",
+//     10 : "decagon"
+//   };
 
+//   if(sidesObj.hasOwnProperty(this.sides)) {
+//     return sidesObj[this.sides];
+//   }
+//   return "Could not determine type";
+// };
+
+Shape.prototype.getType = function () {
+  var sidesObj = {
+    3 : "triangle",
+    4 : "quadrilateral",
+    5 : "pentagon",
+    6 : "hexagon",
+    7 : "heptagon",
+    8 : "octagon",
+    9 : "nonagon",
+    10 : "decagon"
+  };
+  if(sidesObj.hasOwnProperty(this.sides)) {
+    return sidesObj[this.sides];
+  }
+  return "Could not determine type";
+};
 
 /* Step 84
  *
@@ -1187,7 +1227,15 @@ Animal.prototype.isWarmBlooded = function (species) {
  * Return true if openBox opens the box, false otherwise.
  *
  */
-
+Box.prototype.openBox = function () {
+  if(this.isOpen === false) {
+    this.isOpen = true;
+    return true;
+  }
+  if(this.isOpen === true) {
+    return false;
+  }
+};
 
  /* Step 85
  *
