@@ -1262,7 +1262,9 @@ Box.prototype.openBox = function () {
  * the color and size of the shoe ("Found red shoes of size 8").
  *
  */
-
+Shoe.prototype.findShoes = function () {
+  return "Found " + this.color + " shoes of size " + this.size;
+};
 
  /* Step 87
  *
