@@ -1373,8 +1373,8 @@ var forwardDriving = new Vehicle("Honda","Civic").drive();
  * and assign the values to each variable below.
  *
  */
-var decagon;
-var polygon;
+var decagon = new Shape(10).getType();
+var polygon = new Shape(11).getType();
 
 
 /* Step 94
@@ -1383,8 +1383,8 @@ var polygon;
  * and assign the values to each variable below.
  *
  */
-var openAClosedBox;
-var closeAnOpenBox;
+var openAClosedBox = new Box("something",false).openBox();
+var closeAnOpenBox = new Box("something else",true).openBox();
 
 
  /* Step 95
